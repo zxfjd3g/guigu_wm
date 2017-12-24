@@ -180,7 +180,7 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        background: $blue;
+        background: $green;
         padding: .666667rem .6rem;
         .privateImage {
           display: inline-block;

@@ -41,11 +41,11 @@
       }
       .search_submit {
         flex: 1;
-        border: 0.025rem solid $blue;
+        border: 0.025rem solid $green;
         margin-left: .2rem;
         @include sc(0.65rem, #fff);
         border-radius: 0.125rem;
-        background-color: $blue;
+        background-color: $green;
         font-weight: bold;
         padding: 0 0.25rem;
       }

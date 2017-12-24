@@ -194,12 +194,12 @@
               }
               .delivery_left {
                 color: #fff;
-                background-color: $blue;
-                border: 0.025rem solid $blue;
+                background-color: $green;
+                border: 0.025rem solid $green;
               }
               .delivery_right {
-                color: $blue;
-                border: 0.025rem solid $blue;
+                color: $green;
+                border: 0.025rem solid $green;
               }
             }
           }
@@ -217,7 +217,7 @@
                 color: #999;
               }
               .order_time {
-                color: $blue;
+                color: $green;
               }
               .segmentation {
                 color: #ccc;
