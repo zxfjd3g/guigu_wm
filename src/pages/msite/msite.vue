@@ -80,10 +80,12 @@
       }
       this.foodTypes = foodTypes;
       //创建swiper对象, 实现翻页显示
-      new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        loop: true
-      });
+      this.$nextTick(() => {
+        new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          loop: true
+        });
+      })
     },
 
     computed: {
