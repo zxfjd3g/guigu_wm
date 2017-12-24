@@ -8,6 +8,7 @@ const msite = () => import('pages/msite/msite')
 const search = () => import('pages/search/search')
 const order = () => import('pages/order/order')
 const profile = () => import('pages/profile/profile')
+const login = () => import('pages/login/login')
 
 // 所有路由的数组
 const routes = [
@@ -41,9 +42,13 @@ const routes = [
     component: profile,
     meta: {keepAlive: true, isTop: true},
   },
+  // 登录注册页
+  {
+    path: '/login',
+    component: login
+  },
 ]
 
 export default new Router({
-  // linkActiveClass:"active",
   routes
 })

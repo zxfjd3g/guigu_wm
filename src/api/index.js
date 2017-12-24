@@ -31,4 +31,34 @@ export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
   'flags[]': 'F'
 })
 
+/**
+ * 获取图片验证码
+ */
+export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST');
 
+/**
+ * 获取短信验证码
+ */
+export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
+  mobile: phone,
+  scene: 'login',
+  type: 'sms'
+}, 'POST');
+
+/**
+ * 手机号登录
+ */
+export const phoneLogin = (code, mobile, validate_token) => fetch('/v1/login/app_mobile', {
+  code,
+  mobile,
+  validate_token
+}, 'POST');
+
+/**
+ * 账号密码登录
+ */
+export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', {
+  username,
+  password,
+  captcha_code
+}, 'POST');

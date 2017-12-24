@@ -66,13 +66,13 @@
             </span>
           </div>
         </a>
-        <!-- 饿了么会员卡 -->
+        <!-- 硅谷外卖会员卡 -->
         <router-link to='/vipcard' class="myorder">
           <aside>
             <svgImage type="#icon-vip"/>
           </aside>
           <div class="myorder-div">
-            <span>饿了么会员卡</span>
+            <span>硅谷外卖会员卡</span>
             <span class="myorder-divsvg">
               <svgImage type="#icon-jiantou1"/>
             </span>
