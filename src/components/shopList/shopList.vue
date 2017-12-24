@@ -26,7 +26,7 @@
               </div>
             </section>
             <section class="rating_order_num_right">
-              <span class="delivery_style delivery_left" v-if="item.delivery_mode">{{item.delivery_mode.text}}</span>
+              <span class="delivery_style delivery_left" v-if="item.delivery_mode">硅谷专送</span>
               <span class="delivery_style delivery_right" v-if="zhunshi(item.supports)">准时达</span>
             </section>
           </h5>
