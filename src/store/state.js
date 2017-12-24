@@ -1,0 +1,6 @@
+export default {
+  userInfo: null, //用户信息
+  login: false, // 是否登陆
+  geohash: '40.10038,116.36867', // 经纬度
+  imgPath: null, //头像地址
+}
