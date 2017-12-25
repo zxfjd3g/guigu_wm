@@ -133,7 +133,7 @@
         } else {
           path = this.getImgPath(this.avatar)
         }
-        this.SAVE_AVANDER(path)
+        this.saveAvatar(path)
         return path
       }
     },

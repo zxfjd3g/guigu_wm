@@ -15,6 +15,7 @@ export default {
 
   //获取用户信息存入vuex
   [GET_USERINFO](state, {info}) {
+    debugger
     if (state.userInfo && (state.userInfo.username !== info.username)) {
       return
     }
@@ -30,6 +31,7 @@ export default {
 
   // 记录用户信息
   [RECORD_USERINFO](state, {info}) {
+    debugger
     state.userInfo = info;
     state.login = true
     setStore('user_id', info.user_id);

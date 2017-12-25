@@ -2,20 +2,16 @@
 ajax请求模块
  */
 import fetch from './fetch'
-import {getStore} from '../common/utils/storageUtil'
 
 /**
- * 获取用户信息(根据用户ID)
+ * 获取用户信息(根据会话)
  */
-export const getUser = () => fetch('/v1/user', {user_id: getStore('user_id')})
+export const getUser = () => fetch('/v1/user')
 
 /**
  * 获取msite商铺列表(根据经纬度)
  */
-export const getShopList = (latitude, longitude) => {
-  const data = {latitude, longitude}
-  return fetch('/shopping/restaurants', data)
-}
+export const getShopList = (latitude, longitude) => fetch('/shopping/restaurants', {latitude, longitude})
 
 /**
  * 获取msite页面地址信息(根据经纬度串)
@@ -37,6 +33,17 @@ export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
 export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST');
 
 /**
+ * 账号密码登录
+ */
+export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', {
+  username,
+  password,
+  captcha_code
+}, 'POST');
+
+
+
+/**
  * 获取短信验证码
  */
 export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
@@ -54,11 +61,4 @@ export const phoneLogin = (code, mobile, validate_token) => fetch('/v1/login/app
   validate_token
 }, 'POST');
 
-/**
- * 账号密码登录
- */
-export const accountLogin = (username, password, captcha_code) => fetch('/v2/login', {
-  username,
-  password,
-  captcha_code
-}, 'POST');
+

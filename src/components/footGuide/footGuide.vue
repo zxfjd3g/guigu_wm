@@ -1,6 +1,6 @@
 <template>
   <div class='foot_guide'>
-    <div class="guide_item" @click="refreshIndex()">
+    <div class="guide_item" @click.stop="refreshIndex()">
       <!--底部外卖svg-->
       <span v-if="$route.path.indexOf('msite') !== -1">
         <svgImage className="icon_style" type="#icon-waimai2"/>
@@ -10,7 +10,7 @@
       </span>
       <span>外卖</span>
     </div>
-    <div class="guide_item" @click="gotoAddress({path: '/search/' + geohash})">
+    <div class="guide_item" @click.stop="gotoAddress({path: '/search/' + geohash})">
       <span v-if="$route.path.indexOf('search') !== -1">
         <svgImage className="icon_style" type="#icon-search2"/>
       </span>
@@ -19,7 +19,7 @@
       </span>
       <span>搜索</span>
     </div>
-    <div class="guide_item" @click="gotoAddress('/order')">
+    <div class="guide_item" @click.stop="gotoAddress('/order')">
       <span v-if="$route.path.indexOf('order') !== -1">
         <svgImage className="icon_style" type="#icon-dingdan2"/>
       </span>
@@ -28,7 +28,7 @@
       </span>
       <span>订单</span>
     </div>
-    <div class="guide_item" @click="gotoAddress('/profile')">
+    <div class="guide_item" @click.stop="gotoAddress('/profile')">
       <span v-if="$route.path.indexOf('profile') !== -1">
         <svgImage className="icon_style" type="#icon-geren2"/>
       </span>
