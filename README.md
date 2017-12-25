@@ -106,7 +106,7 @@
       meta: {keepAlive: true, isTop: true},
     }
 
-## 2. <router-link>
+## 2. <router-link>标签
     <router-link class="shop_li"
         :to="{path: 'shop', query:{geohash, id: item.id}}"
         tag='li'>
@@ -157,7 +157,7 @@
     import 'common/utils/rem'
     
 
-# [查看接口文档](api.md)
+# [查看接口文档](API.md)
             
 
     
