@@ -42,6 +42,7 @@ export const accountLogin = (username, password, captcha_code) => fetch('/v2/log
 }, 'POST');
 
 
+/*注意: 下面2个接口不可用*/
 
 /**
  * 获取短信验证码

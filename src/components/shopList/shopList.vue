@@ -63,10 +63,8 @@
   import {mapState} from 'vuex'
   import {getShopList} from 'api'
   import {imgBaseUrl} from 'common/utils/env'
-  import {getImgPath} from 'components/common/mixins'
 
   export default {
-    mixins: [getImgPath],
     data() {
       return {
         shops: [], // 店铺列表数据

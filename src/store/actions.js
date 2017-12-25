@@ -7,10 +7,6 @@ import {
 
 export default {
 
-  saveAvatar({commit}, imgPath) {
-    commit(SAVE_AVATAR, {imgPath})
-  },
-
   async getUserInfo({commit, state}) {
     const info = await getUser()
     commit(GET_USERINFO, {info})

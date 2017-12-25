@@ -99,10 +99,9 @@
 </template>
 
 <script>
-  import {mapState, mapActions} from 'vuex'
+  import {mapState} from 'vuex'
   import headTop from 'components/header/head'
   import {imgBaseUrl} from 'common/utils/env'
-  import {getImgPath} from 'components/common/mixins'
 
   export default {
     data() {
@@ -120,27 +119,12 @@
     mounted() {
       this.initData()
     },
-    mixins: [getImgPath],
     computed: {
       ...mapState([
         'userInfo',
-      ]),
-      //后台会返回两种头像地址格式，分别处理
-      imgpath: function () {
-        let path
-        if (this.avatar.indexOf('/') !== -1) {
-          path = imgBaseUrl + this.avatar
-        } else {
-          path = this.getImgPath(this.avatar)
-        }
-        this.saveAvatar(path)
-        return path
-      }
+      ])
     },
     methods: {
-      ...mapActions([
-        'saveAvatar'
-      ]),
       initData() {
         if (this.userInfo && this.userInfo.user_id) {
           this.avatar = this.userInfo.avatar
@@ -202,7 +186,7 @@
             font-weight: 700;
             @include sc(.8rem, $fc);
             .user-icon {
-              @include wh(0.5rem, 0.75rem);
+              @include wh(0.7rem, 1rem);
               display: inline-block;
               vertical-align: middle;
               line-height: 0.75rem;

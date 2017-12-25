@@ -63,7 +63,7 @@
       }
       .user_avatar {
         fill: #fff;
-        @include wh(.8rem, .8rem);
+        @include wh(1.2rem, 1.2rem);
       }
     }
     .title_head {
