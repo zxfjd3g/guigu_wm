@@ -1,5 +1,5 @@
 # 下载非脚手架依赖
-    npm install --save vue-router vuex swiper@3
+    npm install --save vue-router vuex swiper
     npm install --save-dev node-sass sass-loader
     
 # 简化引入自动模块路径

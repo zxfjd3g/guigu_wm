@@ -30,7 +30,7 @@ export const msiteFoodTypes = geohash => fetch('/v2/index_entry', {
 /**
  * 获取图片验证码
  */
-export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST');
+export const getcaptchas = () => fetch('/v1/captchas', {}, 'POST')
 
 /**
  * 账号密码登录
@@ -39,7 +39,7 @@ export const accountLogin = (username, password, captcha_code) => fetch('/v2/log
   username,
   password,
   captcha_code
-}, 'POST');
+}, 'POST')
 
 
 /*注意: 下面2个接口不可用*/
@@ -51,7 +51,7 @@ export const mobileCode = phone => fetch('/v4/mobile/verify_code/send', {
   mobile: phone,
   scene: 'login',
   type: 'sms'
-}, 'POST');
+}, 'POST')
 
 /**
  * 手机号登录
@@ -60,6 +60,6 @@ export const phoneLogin = (code, mobile, validate_token) => fetch('/v1/login/app
   code,
   mobile,
   validate_token
-}, 'POST');
+}, 'POST')
 
 

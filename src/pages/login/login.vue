@@ -88,7 +88,7 @@
     },
 
     created() {
-      this.getCaptchaCode();
+      this.getCaptchaCode()
     },
 
     computed: {
@@ -104,35 +104,35 @@
 
       // 设置登录方式
       setLoginWay(loginWay) {
-        this.loginWay = loginWay;
+        this.loginWay = loginWay
       },
       //是否显示密码
       changePassWordType() {
-        this.showPassword = !this.showPassword;
+        this.showPassword = !this.showPassword
       },
       // 获取图形验证码
       async getCaptchaCode() {
-        let res = await getcaptchas();
-        this.captchaCodeImg = res.code;
+        let res = await getcaptchas()
+        this.captchaCodeImg = res.code
       },
       // 获取短信验证码
       async getVerifyCode() {
         if (this.rightPhoneNumber) {
-          this.computedTime = 30;
+          this.computedTime = 30
           this.timer = setInterval(() => {
-            this.computedTime--;
+            this.computedTime--
             if (this.computedTime == 0) {
               clearInterval(this.timer)
             }
           }, 1000)
           //发送短信验证码
-          let res = await mobileCode(this.phoneNumber);
+          let res = await mobileCode(this.phoneNumber)
           if (res.message) {
-            this.showAlert = true;
-            this.alertText = res.message;
+            this.showAlert = true
+            this.alertText = res.message
             return
           }
-          this.validate_token = res.validate_token;
+          this.validate_token = res.validate_token
         }
       },
       // 发送登录信息
@@ -140,11 +140,11 @@
         if (this.loginWay) {
           if (!this.rightPhoneNumber) {
             this.showAlert = true;
-            this.alertText = '手机号码不正确';
+            this.alertText = '手机号码不正确'
             return
           } else if (!(/^\d{6}$/gi.test(this.mobileCode))) {
             this.showAlert = true;
-            this.alertText = '短信验证码不正确';
+            this.alertText = '短信验证码不正确'
             return
           }
 
@@ -152,35 +152,35 @@
           this.userInfo = await phoneLogin(this.mobileCode, this.phoneNumber, this.validate_token);
         } else {
           if (!this.userAccount) {
-            this.showAlert = true;
-            this.alertText = '请输入手机号/邮箱/用户名';
+            this.showAlert = true
+            this.alertText = '请输入手机号/邮箱/用户名'
             return
           } else if (!this.passWord) {
             this.showAlert = true;
-            this.alertText = '请输入密码';
+            this.alertText = '请输入密码'
             return
           } else if (!this.codeNumber) {
-            this.showAlert = true;
-            this.alertText = '请输入验证码';
+            this.showAlert = true
+            this.alertText = '请输入验证码'
             return
           }
 
           //用户名登录
-          this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber);
+          this.userInfo = await accountLogin(this.userAccount, this.passWord, this.codeNumber)
         }
         //如果返回的值不正确，则弹出提示框，返回的值正确则返回上一页
         if (!this.userInfo.user_id) {
-          this.showAlert = true;
-          this.alertText = this.userInfo.message;
-          if (!this.loginWay) this.getCaptchaCode();
+          this.showAlert = true
+          this.alertText = this.userInfo.message
+          if (!this.loginWay) this.getCaptchaCode()
         } else {
-          this.recordUserinfo(this.userInfo);
-          this.$router.back();
+          this.recordUserinfo(this.userInfo)
+          this.$router.back()
         }
       },
       // 关系提示框
       closeTip() {
-        this.showAlert = false;
+        this.showAlert = false
       }
     },
     components: {
